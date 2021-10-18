@@ -1,0 +1,27 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: shop-service-order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springCloud?userUnicode=true&characterEncoding=utf-8&serverTimezone = GMT
+    password: admin
+    username: root
+jpa:
+  database: MySQL
+  show-sql: true
+  open-in-view: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/,http://127.0.0.1:8000/eureka/
+  instance:
+    prefer-ip-address: true #使用ip地址进行注册
+logging:
+  level:
+    root: debug
+#shop-service-product:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+

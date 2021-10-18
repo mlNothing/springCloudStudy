@@ -1,0 +1,25 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: shop-service-product
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springCloud?userUnicode=true&characterEncoding=utf-8&serverTimezone = GMT
+    password: admin
+    username: root
+jpa:
+  database: MySQL
+  show-sql: true
+  open-in-view: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/,http://127.0.0.1:8000/eureka/ #注册到多个
+  instance:
+    prefer-ip-address: true #使用ip地址进行注册
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} #向注册服务中心注册IP
+    lease-expiration-duration-in-seconds: 10  # eureka client 发送心跳给server端后，续约到期时间
+    lease-renewal-interval-in-seconds: 5  #发送时间间隔
+    

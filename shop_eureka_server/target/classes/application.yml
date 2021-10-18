@@ -1,0 +1,49 @@
+#第一次运行开启这个  是9000的端口  将下面的注释  然后运行下面的
+server:
+  port: 9000
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    #    register-with-eureka: false  #是否需要将自己注册到注册中心
+    #    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka/
+spring:
+  application:
+    name: eureka-server
+
+# 模拟两个Eureka 端口9000 8000 两个server需要相互注册
+
+#第一次运行开启这个  是9000的端口  将下面的注释  然后运行下面的
+#server:
+#  port: 9000
+#eureka:
+#  instance:
+#    hostname: 127.0.0.1
+#  client:
+#    #    register-with-eureka: false  #是否需要将自己注册到注册中心
+#    #    fetch-registry: false
+#    service-url:
+#      defaultZone: http://127.0.0.1:8000/eureka/
+#spring:
+#  application:
+#    name: eureka-server
+
+
+#server:
+#  port: 8000
+#eureka:
+#  instance:
+#    hostname: 127.0.0.1
+#  client:
+##    register-with-eureka: false  #是否需要将自己注册到注册中心
+##    fetch-registry: false
+#    service-url:
+#     defaultZone: http://127.0.0.1:9000/eureka/
+#  server:
+#    enable-self-preservation: false #关闭自我保护机制 一般在上线前开启
+#    eviction-interval-timer-in-ms: 4000 #剔除时间间隔
+#spring:
+#  application:
+#    name: eureka-server
